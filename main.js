@@ -47,7 +47,7 @@ palindrome(str); */
 // ================================Find the Longest Word in a String
 //Return the length of the longest word in the provided sentence.
 
-var sentence = process.argv[2];
+/* var sentence = process.argv[2];
 function findLongestWord(sentence) {
     var arr;
     var index = 0;
@@ -60,4 +60,21 @@ function findLongestWord(sentence) {
     }
     console.log(arr[index].length);
 }
-findLongestWord(sentence);
+findLongestWord(sentence); */
+
+// ================================Title Case a Sentence
+//Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+/* var str = process.argv[2];
+function titleCase(str) {
+    var arr;
+    arr = str.toLowerCase().split(" ");
+    for(i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].replace(arr[i].charAt(),arr[i].charAt().toUpperCase());
+    }
+    arr = arr.join(" ");
+    console.log(arr);
+}
+titleCase(str); */
+
+
