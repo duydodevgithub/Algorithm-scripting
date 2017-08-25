@@ -1,5 +1,5 @@
 // Excer ofalgorithm scripting on free code camp
-// ================================
+// ================================ Reverse string
 // Reverse a String 
 /* function revStr(str) {
     str = str.split("");
@@ -9,7 +9,7 @@
 
 revStr("Hello"); */
 
-// ================================
+// ================================ Factorialize number
 // Factorialize a Number
 /* Return the factorial of the provided integer.
 If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n. */
@@ -23,22 +23,30 @@ If the integer is represented with the letter n, a factorial is the product of a
 }
 factorialNum(5); */
 
-// ================================
+// ================================Check for Palindromes
 
 /* 
-Check for Palindromes
 Return true if the given string is a palindrome. Otherwise, return false.
 
 A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing. */
-var str = process.argv[2];
+/* var str = process.argv[2];
 function palindrome(str) {
     var strReverse;
-    strReverse = str.split("");
-    strReverse = strReverse.reverse().join("");
-    if(strReverse === str) {
+    strReverse = str.replace(/[\W]_/g, ""); //replace special character
+    console.log(strReverse);
+    strReverse = strReverse.toLowerCase().split("");  //turn into anarray
+    strReverse = strReverse.reverse().join("");  //reverse array and turn into string
+    if(strReverse === str.replace(/\W/, "").toLowerCase()) {
         console.log("The world " + str + " is palindromes");
     } else {
         console.log("The world " + str + " is NOT palindrome");
     }
 }
-palindrome(str);
+palindrome(str); */
+
+// ================================Find the Longest Word in a String
+//Return the length of the longest word in the provided sentence.
+
+function findLongestWord(str) {
+
+}
