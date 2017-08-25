@@ -47,6 +47,17 @@ palindrome(str); */
 // ================================Find the Longest Word in a String
 //Return the length of the longest word in the provided sentence.
 
-function findLongestWord(str) {
-
+var sentence = process.argv[2];
+function findLongestWord(sentence) {
+    var arr;
+    var index = 0;
+    arr = sentence.split(" ");
+    console.log(arr);
+    for(i = 0; i < arr.length; i++) {
+        if(arr[index].length < arr[i].length) {
+            index = i;
+        }
+    }
+    console.log(arr[index].length);
 }
+findLongestWord(sentence);
