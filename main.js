@@ -29,20 +29,6 @@ Return true if the given string is a palindrome. Otherwise, return false.
 A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing. */
 
 function palindrome(str) {
-    if( str.length % 2 == 0) {
-        for(i = 0; i <= str.length / 2; i++) {
-            if( str.charAt(i) === str.charAt(str.length - i)) {
-                console.log("This word is palindrome");
-            }
-             else {console.log("This is not palindrome");   }         
-            }
-        } else if (str.length % 2 !== 0) {
-            for(j = 0; j<= Math.floor(str.length /2); j++) {
-                if( str.charAt(i) === str.charAt(str.length - i)) {                
-                    console.log("This word is palindrome");   
-                }             
-            else{ console.log("This is not palindrome");}         
-            } 
-        }
-    }
+}
+
   palindrome("eyae");
