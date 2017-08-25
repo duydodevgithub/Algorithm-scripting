@@ -78,3 +78,22 @@ function titleCase(str) {
 titleCase(str); */
 
 
+// ================================Return Largest Numbers in Arrays
+
+function largestOfFour(arr) {
+    var resultArr = [];
+    for(i = 0; i < arr.length; i++) {   //loop through array
+        var maxNum = 0;
+        for(var j = 0; j < arr[i].length; j ++) { //loop through each number in sub array and find maximum one
+            if(arr[i][j] > maxNum) {
+                maxNum = arr[i][j];
+            }
+        }
+        resultArr.push(maxNum);
+    }
+    console.log(resultArr);
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 45, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+// ==================================Confirm the Ending
