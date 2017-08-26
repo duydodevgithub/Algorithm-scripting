@@ -157,3 +157,5 @@ function chunkArrayInGroups(arr, size) {
 
 // chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
+//==================================Slasher Flick
+//Return the remaining elements of an array after chopping off n elements from the head.
