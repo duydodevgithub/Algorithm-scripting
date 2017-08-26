@@ -159,3 +159,11 @@ function chunkArrayInGroups(arr, size) {
 
 //==================================Slasher Flick
 //Return the remaining elements of an array after chopping off n elements from the head.
+function slasher(arr, howMany) {
+    arr = arr.slice(howMany);
+    console.log(arr);
+}
+
+// slasher([1, 2, 3], 2)
+
+//==================================
