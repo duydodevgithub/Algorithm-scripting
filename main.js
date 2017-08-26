@@ -98,7 +98,7 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 45, 18, 26], [32, 35, 37, 39], [1000, 1001
 
 // ==================================Confirm the Ending
 //Check if a string (first argument, str) ends with the given target string (second argument, target).
-function confirmEnding(str, target) {
+/* function confirmEnding(str, target) {
     var num_target = target.length;
     //get last word of str with target length
     var lastChar = str.substring(str.length - num_target, str.length);
@@ -113,4 +113,11 @@ function confirmEnding(str, target) {
     console.log(lastChar);
 }
 
-confirmEnding("Open sesame", "same");
+confirmEnding("Open sesame", "same"); */
+
+// ================================== Repeat a string repeat a string
+//Repeat a given string (first argument) num times (second argument). Return an empty string if num is not a positive number.
+
+function repeatStringNumTimes(str,num) [
+    
+]
