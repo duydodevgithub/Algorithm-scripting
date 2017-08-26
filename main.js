@@ -80,7 +80,7 @@ titleCase(str); */
 
 // ================================Return Largest Numbers in Arrays
 
-function largestOfFour(arr) {
+/* function largestOfFour(arr) {
     var resultArr = [];
     for(i = 0; i < arr.length; i++) {   //loop through array
         var maxNum = 0;
@@ -94,6 +94,23 @@ function largestOfFour(arr) {
     console.log(resultArr);
 }
 
-largestOfFour([[4, 5, 1, 3], [13, 27, 45, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+largestOfFour([[4, 5, 1, 3], [13, 27, 45, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); */
 
 // ==================================Confirm the Ending
+//Check if a string (first argument, str) ends with the given target string (second argument, target).
+function confirmEnding(str, target) {
+    var num_target = target.length;
+    //get last word of str with target length
+    var lastChar = str.substring(str.length - num_target, str.length);
+    if(lastChar === target) {
+        return true;
+        // console.log("True");
+    } else {
+        return false;
+        // console.log("False");
+        
+    }
+    console.log(lastChar);
+}
+
+confirmEnding("Open sesame", "same");
