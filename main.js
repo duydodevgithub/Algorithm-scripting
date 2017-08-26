@@ -1,27 +1,27 @@
 // Excer ofalgorithm scripting on free code camp
 // ================================ Reverse string
 // Reverse a String 
-/* function revStr(str) {
+function revStr(str) {
     str = str.split("");
     str = str.reverse().join("");
     console.log(str);
 }
 
-revStr("Hello"); */
+// revStr("Hello");
 
 // ================================ Factorialize number
 // Factorialize a Number
 /* Return the factorial of the provided integer.
 If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n. */
 
-/* function factorialNum(n) {
+function factorialNum(n) {
     var result = 1;
     for (i = 1; i <= n; i++) {
         result *= i;
     }
     console.log(result);
 }
-factorialNum(5); */
+// factorialNum(5);
 
 // ================================Check for Palindromes
 
@@ -29,7 +29,7 @@ factorialNum(5); */
 Return true if the given string is a palindrome. Otherwise, return false.
 
 A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing. */
-/* var str = process.argv[2];
+var str = process.argv[2];
 function palindrome(str) {
     var strReverse;
     strReverse = str.replace(/[\W]_/g, ""); //replace special character
@@ -42,12 +42,12 @@ function palindrome(str) {
         console.log("The world " + str + " is NOT palindrome");
     }
 }
-palindrome(str); */
+// palindrome(str);
 
 // ================================Find the Longest Word in a String
 //Return the length of the longest word in the provided sentence.
 
-/* var sentence = process.argv[2];
+var sentence = process.argv[2];
 function findLongestWord(sentence) {
     var arr;
     var index = 0;
@@ -60,12 +60,12 @@ function findLongestWord(sentence) {
     }
     console.log(arr[index].length);
 }
-findLongestWord(sentence); */
+// findLongestWord(sentence);
 
 // ================================Title Case a Sentence
 //Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
 
-/* var str = process.argv[2];
+var str = process.argv[2];
 function titleCase(str) {
     var arr;
     arr = str.toLowerCase().split(" ");
@@ -75,12 +75,12 @@ function titleCase(str) {
     arr = arr.join(" ");
     console.log(arr);
 }
-titleCase(str); */
+// titleCase(str);
 
 
 // ================================Return Largest Numbers in Arrays
 
-/* function largestOfFour(arr) {
+function largestOfFour(arr) {
     var resultArr = [];
     for(i = 0; i < arr.length; i++) {   //loop through array
         var maxNum = 0;
@@ -94,11 +94,11 @@ titleCase(str); */
     console.log(resultArr);
 }
 
-largestOfFour([[4, 5, 1, 3], [13, 27, 45, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); */
+// largestOfFour([[4, 5, 1, 3], [13, 27, 45, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
 
 // ==================================Confirm the Ending
 //Check if a string (first argument, str) ends with the given target string (second argument, target).
-/* function confirmEnding(str, target) {
+function confirmEnding(str, target) {
     var num_target = target.length;
     //get last word of str with target length
     var lastChar = str.substring(str.length - num_target, str.length);
@@ -113,11 +113,20 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 45, 18, 26], [32, 35, 37, 39], [1000, 1001
     console.log(lastChar);
 }
 
-confirmEnding("Open sesame", "same"); */
+// confirmEnding("Open sesame", "same");
 
 // ================================== Repeat a string repeat a string
 //Repeat a given string (first argument) num times (second argument). Return an empty string if num is not a positive number.
 
-function repeatStringNumTimes(str,num) [
-    
-]
+function repeatStringNumTimes(str,num) {
+    var output = "";
+    for(i = 0; i < num; i++) {
+        output += str;
+    }
+    return output;
+}
+
+// repeatStringNumTimes("Hello",3)
+
+// ================================== Truncate a string
+//Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
