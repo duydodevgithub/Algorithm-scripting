@@ -185,3 +185,16 @@ function mutation(arr) {
 
 // mutation(["Hello", "Heyo"]);
 
+//==================================Falsy Bouncer
+//Remove all falsy values from an array
+
+
+function bouncer(arr) {
+    var result = [];
+    result = arr.filter(Boolean);
+    return (result);
+}
+
+// bouncer([7, "ate", "", false, 9]);
+
+//==================================
