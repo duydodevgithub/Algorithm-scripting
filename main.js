@@ -202,6 +202,7 @@ function bouncer(arr) {
 //followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
 function destroyer(arr) {
     var args = Array.from(arguments).slice(1);
+    console.log(typeof args);
     var newArr = arr.filter(function(val){
         return !args.includes(val);
     });
@@ -209,4 +210,45 @@ function destroyer(arr) {
     return newArr;
   }
 
-destroyer([1, 2, 3, 1, 2, 3],1, 3);
+// destroyer([1, 2, 3, 1, 2, 3],1, 3);
+
+//====================================Where do I belong
+//Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.
+//The returned value should be a number.
+
+function getIndexToIns(arr, num){
+    var newArr = arr.push(num);
+    newArr = arr.sort(function(a,b){
+        return a - b;
+    });
+    var index = newArr.indexOf(num);
+    console.log(newArr);
+    console.log(index);
+    return index;
+}
+
+// getIndexToIns([9,3,6,8],4);
+
+//=====================================Caesars Cipher
+//One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. 
+//In a shift cipher the meanings of the letters are shifted by some set amount.
+
+function rot13(str) {
+    var firstArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+    var secondArr = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var strArr = str.toUpperCase().split("");
+    console.log(strArr);
+    for(var i = 0; i < strArr.length; i++) {
+        if(firstArr.includes(strArr[i])) {
+            var index1 = firstArr.indexOf(strArr[i]);
+            strArr[i] = secondArr[index1];
+        } else if (secondArr.includes(strArr[i])){
+            var index2 = secondArr.indexOf(strArr[i]);
+            strArr[i] = firstArr[index2];
+        }
+    }
+    console.log(strArr.join(""));
+    return strArr;
+}
+
+rot13("SERR PBQR PNZC");
