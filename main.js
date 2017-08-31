@@ -251,10 +251,23 @@ function rot13(str) {
     return strArr;
 }
 
-rot13("SERR PBQR PNZC");
+// rot13("SERR PBQR PNZC");
 
 //===========================================Intermediate algorithm
 
 //===========================Sum All Numbers in a Range
 //We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.
 
+function sumAll(arr) {
+    var sum = 0;
+    arr = arr.sort(function(a,b) {
+        return a-b;
+    });
+    for (var i = arr[0]; i <= arr[1]; i++){
+        sum += i;
+    }
+    console.log(sum);
+    return sum; 
+}
+
+sumAll([4,1]);
