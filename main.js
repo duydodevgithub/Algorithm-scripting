@@ -254,3 +254,7 @@ function rot13(str) {
 rot13("SERR PBQR PNZC");
 
 //===========================================Intermediate algorithm
+
+//===========================Sum All Numbers in a Range
+//We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.
+
