@@ -277,6 +277,19 @@ function sumAll(arr) {
 //In other words, return the symmetric difference of the two arrays.
 
 function diffArray(arr1, arr2){
+    var newArray = arr1.concat(arr2);
+    var filterArray1, filterArray2, result;
+    filterArray1 = newArray.filter(function(val) {
+        return !(arr1.indexOf(val)  >= 0)
+    });
+    filterArray2 = newArray.filter(function(val) {
+        return !(arr2.indexOf(val)  >= 0)
+    });
     
+    result = filterArray1.concat(filterArray2);
+    console.log(newArray);
+    console.log(result);
+    return result;
 }
 
+// diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
