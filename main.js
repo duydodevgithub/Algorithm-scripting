@@ -293,3 +293,16 @@ function diffArray(arr1, arr2){
 }
 
 // diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
+
+//================================Roman Numeral Converter
+//Convert the given number into a roman numeral.
+
+function convertToRoman(num){
+    var result = 0;
+    
+
+    console.log(result);
+    return result;
+}
+
+convertToRoman(36);
