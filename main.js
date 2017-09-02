@@ -303,13 +303,29 @@ var convertToRoman = function(num) {
       var romanized = '';
     
       for (var index = 0; index < decimalValue.length; index++) {
-        while (decimalValue[index] <= num) {
+        console.log(index);        
+        while (decimalValue[index] <= num) {   //ex: num = 11
           romanized += romanNumeral[index];
+          console.log(index + " romanized " + romanized)
           num -= decimalValue[index];
+          console.log(index + " num " + num)
+          
         }
       }
-      console.log(romanized);
+    //   console.log(romanized);
       return romanized;
     }
 
-convertToRoman(36);
+// convertToRoman(6);
+
+//================================Wherefore art thou
+//Make a function that looks through an array of objects (first argument) and returns an array of
+//all objects that have matching property and value pairs (second argument). 
+//Each property and value pair of the source object has to be present in the object from the 
+//collection if it is to be included in the returned array.
+
+function whatIsInAName(collection, source){
+    
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
