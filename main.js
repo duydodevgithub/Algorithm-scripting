@@ -296,13 +296,20 @@ function diffArray(arr1, arr2){
 
 //================================Roman Numeral Converter
 //Convert the given number into a roman numeral.
-
-function convertToRoman(num){
-    var result = 0;
+var convertToRoman = function(num) {
+      var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+      var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
     
-
-    console.log(result);
-    return result;
-}
+      var romanized = '';
+    
+      for (var index = 0; index < decimalValue.length; index++) {
+        while (decimalValue[index] <= num) {
+          romanized += romanNumeral[index];
+          num -= decimalValue[index];
+        }
+      }
+      console.log(romanized);
+      return romanized;
+    }
 
 convertToRoman(36);
