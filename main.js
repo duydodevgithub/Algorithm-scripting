@@ -325,7 +325,7 @@ var convertToRoman = function(num) {
 //collection if it is to be included in the returned array.
 
 function whatIsInAName(collection, source){
-    if
+    //
 }
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
