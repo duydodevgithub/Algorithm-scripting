@@ -327,10 +327,12 @@ var convertToRoman = function(num) {
 function whatIsInAName(collection, source){
 //    add comment.....
     for(var i = 0; i < collection.length; i++) {
-        if(collection[i].hasOwnProperty("last")) {
-            console.log("Yes");
+        if(collection[i].hasOwnProperty(Object.keys(source))) {
+            console.log(collection[i]);
         } else if (collection[i].hasOwnProperty("first")) {
             //
+        } else {
+            console.log("Has no properties of source")
         }
     }
 
