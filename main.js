@@ -326,7 +326,14 @@ var convertToRoman = function(num) {
 
 function whatIsInAName(collection, source){
 //    add comment.....
-    // ........////////
+    for(var i = 0; i < collection.length; i++) {
+        if(collection[i].hasOwnProperty("last")) {
+            console.log("Yes");
+        } else if (collection[i].hasOwnProperty("first")) {
+            //
+        }
+    }
+
 }
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
