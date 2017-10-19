@@ -325,21 +325,27 @@ var convertToRoman = function(num) {
 //collection if it is to be included in the returned array.
 
 function whatIsInAName(collection, source){
-    console.log(source.last);
-//    add comment.......
-console.log(Object.keys(source)[0]);
-    for(var i = 0; i < collection.length; i++) {
-        if(collection[i].hasOwnProperty(Object.keys(source))) {
-            for(var j = 0; j< Object.keys(collection[i]).length; j++){
-                if(Object.keys(collection[i])[j] === Object.keys(source)[0]) {
-                    console.log(collection[i]);
-                }
+    var keySource = Object.keys(source);
+    var result;
+    // console.log(keySource);
+    result = collection.filter(function(obj){
+        for(var i = 0; i < keySource.length; i++){
+            if(!obj.hasOwnProperty(keySource[i]) || obj[keySource[i]] !== source[keySource[i]]) {
+                return false;
             }
-        }  else {
-            console.log("Has no properties of source")
         }
-    }
-
+        return true;
+    });
+    return result;
 }
 
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
+// whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
+
+//================================Search and Replace
+// Perform a search and replace on the sentence using the arguments provided and return the new sentence.
+function myReplace(str, before, after) {
+    return str;
+    
+  }
+  
+  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
