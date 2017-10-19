@@ -344,8 +344,15 @@ function whatIsInAName(collection, source){
 //================================Search and Replace
 // Perform a search and replace on the sentence using the arguments provided and return the new sentence.
 function myReplace(str, before, after) {
-    return str;
-    
+    var arr = str.split(" ");
+    for (var i = 0; i < arr.length; i++){
+        if(before === arr[i]){
+            if(arr[i].charAt(0) == arr[i].charAt(0).toUpperCase);
+            arr.splice(i, 1, after);
+            console.log(arr);
+        }
+    }
+    return (arr.join(" "));
   }
-  
-  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+  myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
