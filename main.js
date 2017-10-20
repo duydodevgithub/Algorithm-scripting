@@ -350,4 +350,15 @@ function myReplace(str, before, after) {
     console.log(str.replace(before, after));
   }
 
-  myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
+//   myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
+
+//======================================Pig Latin
+// Translate the provided string to pig latin.
+
+function translatePigLatin(str) {
+    
+    return str;
+  }
+  
+  translatePigLatin("consonant");
+  
