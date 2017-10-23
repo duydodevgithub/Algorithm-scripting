@@ -356,9 +356,18 @@ function myReplace(str, before, after) {
 // Translate the provided string to pig latin.
 
 function translatePigLatin(str) {
-    
-    return str;
+    var firstLetter = str.charAt(0);
+    var vowel = /[aeiou]/gi;
+    if(str[0].match(vowel)) {
+        str = str + "way";
+    } else {
+        var vowelIndex = str.indexOf(str.match(vowel)[0]);
+        console.log(vowelIndex);
+        str = str.substring(vowelIndex, str.length - vowelIndex + 2) + str.slice(0, vowelIndex) + "ay" ;
+    }
+    return(str);
+    // console.log(str);
   }
   
-  translatePigLatin("consonant");
-  
+//   translatePigLatin("california");
+//======================================DNA Pairing
