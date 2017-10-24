@@ -370,4 +370,53 @@ function translatePigLatin(str) {
   }
   
 //   translatePigLatin("california");
+
 //======================================DNA Pairing
+//The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+
+function pairElement(str) {
+    var result = [];
+    for(var i = 0; i < str.length; i++) {
+        switch(str[i]) {
+            case "A":
+                result.push(["A", "T"]);
+                break;
+            case "T":
+                result.push(["T", "A"]);
+                break;
+            case "G":
+                result.push(["G", "C"]);
+                break;
+            case "C":
+                result.push(["C", "G"]);
+                break;
+        }
+    }
+    // console.log(result);
+    return result;
+  }
+  
+//   pairElement("GTCGA");
+
+//=======================================Missing letters
+// Find the missing letter in the passed letter range and return it.
+function fearNotLetter(str) {
+   for(var i = 0; i < str.length; i ++){
+       if(str.charCodeAt(i) !== str.charCodeAt(0) + i) {
+           console.log (String.fromCharCode(str.charCodeAt(0) + i));
+       }
+   }
+   return undefined;
+  }
+  
+//   fearNotLetter("abe");
+
+//==========================================Boo who
+// /Check if a value is classified as a boolean primitive. Return true or false.
+
+function booWho(bool) {
+    // What is the new fad diet for ghost developers? The Boolean.
+    return bool;
+  }
+  
+  booWho(null);
