@@ -1,2 +1,2 @@
 # Algorithm-scripting
-All algorithm excer in freecodecamp
+Contains all challenged Algorithm practices from freecodecamp.org
