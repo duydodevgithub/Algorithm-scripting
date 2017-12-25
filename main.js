@@ -416,7 +416,13 @@ function fearNotLetter(str) {
 
 function booWho(bool) {
     // What is the new fad diet for ghost developers? The Boolean.
-    return bool;
+    return typeof bool === 'boolean';
   }
   
-  booWho(null);
+//   booWho(null);
+
+// ============================================Sorted Union
+// Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+
+
