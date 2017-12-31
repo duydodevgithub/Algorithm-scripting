@@ -424,5 +424,30 @@ function booWho(bool) {
 // ============================================Sorted Union
 // Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
 
+function uniteUnique(arr1, arr2, arr3) {
+    var finalArr = [];
+    for(var i = 0; i < arguments.length; i++) {
+        var arrArgument = arguments[i];
+        for(var j = 0; j < arrArgument.length; j++) {
+            var indexValue = arrArgument[j];
+            if(finalArr.indexOf(indexValue) < 0) {
+                finalArr.push(indexValue);
+            }
+        }
+    }
+    // return finalArr;
+    console.log(finalArr);
+}
+
+// uniteUnique([1, 3, 2], [1, [5]], [2, [4]]);
+//==============================================Convert HTML Entities
+//Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
 
 
+function convertHTML(str) {
+    // &colon;&rpar;
+    return str;
+  }
+  
+  convertHTML("Dolce & Gabbana");
+  
