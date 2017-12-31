@@ -446,8 +446,14 @@ function uniteUnique(arr1, arr2, arr3) {
 
 function convertHTML(str) {
     // &colon;&rpar;
+    str = str.replace(/&/g, "&amp;");
+    str = str.replace(/</g, "&lt;");
+    str = str.replace(/>/g, "&gt;");
+    str = str.replace(/"/g, "&quot;");
+    str = str.replace(/'/g, "&apos;");
+    
+    console.log(str);
     return str;
   }
   
-  convertHTML("Dolce & Gabbana");
-  
+  convertHTML('Stuff in "quotation marks"');
