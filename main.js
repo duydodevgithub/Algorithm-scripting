@@ -456,4 +456,29 @@ function convertHTML(str) {
     return str;
   }
   
-  convertHTML('Stuff in "quotation marks"');
+//   convertHTML('Stuff in "quotation marks"');
+
+//================================================Spinal Tap Case
+//Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+function spinalCase(str) {
+    // "It's such a fine line between stupid, and clever."
+    // --David St. Hubbins
+    str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+    str = str.toLowerCase().replace(/\s/g,"-").replace(/_/g,"-");
+    console.log(str);
+    return str;
+  }
+
+//   spinalCase('ThisIs Spinal Tap');
+
+//===================================================Sum All Odd Fibonacci Numbers
+//Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+
+function sumFibs(num) {
+    return num;
+  }
+  
+sumFibs(4);
+  
+  
