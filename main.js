@@ -492,6 +492,20 @@ function sumFibs(num) {
     return final;
 }
 
-// sumFibs(75024);
+function sumFibs2(num) {
+    var preNum = 0;
+    var curNum = 1;
+    var result = 0;
+    while(curNum < num) {
+        curNum = preNum + curNum;
+        console.log(curNum);
+        // return result;  
+    }
+}
+
+// sumFibs2(10);
+
+//==================================Sum All Primes
+//Sum all the prime numbers up to and including the provided number.
 
 
