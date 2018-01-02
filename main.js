@@ -496,16 +496,48 @@ function sumFibs2(num) {
     var preNum = 0;
     var curNum = 1;
     var result = 0;
-    while(curNum < num) {
-        curNum = preNum + curNum;
-        console.log(curNum);
-        // return result;  
+    while(curNum <= num) {
+        if(curNum % 2 !== 0) {
+            result += curNum;
+        }
+        curNum += preNum;
+        preNum = curNum - preNum;
     }
+    return result;  
+    // console.log(result);
 }
 
 // sumFibs2(10);
 
 //==================================Sum All Primes
 //Sum all the prime numbers up to and including the provided number.
+function sumPrimes(number) {
+    var result = 0;
+    function checkPrime(num) {
+        if(num === 1) {
+            return false;
+        } else {
+            if(num === 2) {
+                return true;
+            } else {
+                for(var i = 2; i < num; i++) {
+                    if(num % i == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+    }
+    for(var j = 0; j <= number; j++) {
+        if(checkPrime(j)) {
+            // console.log(j);
+            result += j;
+        }
+    }
+    // console.log(result);
+    return result;
+  }
 
+//   sumPrimes(10);
 
