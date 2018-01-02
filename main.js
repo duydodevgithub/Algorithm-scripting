@@ -476,9 +476,22 @@ function spinalCase(str) {
 //Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
 
 function sumFibs(num) {
-    return num;
-  }
-  
-sumFibs(4);
-  
-  
+    var number;    
+    var result = [0, 1];    
+    for(var i = 0; i < num; i++) {
+        number = result[i+1] + result[i];
+        result.push(number);
+    }
+    var final = 0;    
+    for(var j = 0; result[j] <= num; j++) {
+        if(result[j]%2 == 1) {
+            final += result[j];
+        }
+    }
+    console.log(final);
+    return final;
+}
+
+// sumFibs(75024);
+
+
