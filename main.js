@@ -15,7 +15,7 @@ function revStr(str) {
 If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n. */
 
 function factorialNum(n) {
-    var result = 1;
+var result = 1;
     for (i = 1; i <= n; i++) {
         result *= i;
     }
@@ -599,9 +599,20 @@ function dropElements(arr, func) {
 //Flatten a nested array. You must account for varying levels of nesting.
 
 function steamrollArray(arr) {
-    // I'm a steamroller, baby
-    return arr;
+    return arr.toString()
+      .replace(',,', ',')       // "1,2,,3" => "1,2,3"
+      .split(',')               // ['1','2','3']
+      .map(function(v) {
+        if (v == '[object Object]') { // bring back empty objects
+          return {};
+        } else if (isNaN(v)) {        // if not a number (string)
+          return v;
+        } else {
+          return parseInt(v);         // if a number in a string, convert it
+        }
+      });
   }
-  
+
   steamrollArray([1, [2], [3, [[4]]]]);
+
   
