@@ -636,8 +636,23 @@ function binaryAgent(str) {
 
 function truthCheck(collection, pre) {
     // Is everyone being true?
-    return pre;
+    var x = pre;
+    for(var i = 0; i < collection.length; i++){
+        if(!collection[i][pre]) {
+            return false;
+        }
+    }
+    return true;
   }
   
-  truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+//   truthCheck([{"single": "yes"}], "single");  
+
+//========================================================Arguments Optional
+//Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
+
+function addTogether() {
+    return false;
+  }
+  
+  addTogether(2,3);
   
