@@ -722,6 +722,9 @@ function updateRecords(id, prop, value) {
 // Alter values below to test your code
 // updateRecords(5439, "artist", "ABBA");
 
+//=======================================Symmetric Difference
+//Create a function that takes two or more arrays and returns an array of the symmetric difference (△ or ⊕) of the provided arrays.
+
 
  
  
