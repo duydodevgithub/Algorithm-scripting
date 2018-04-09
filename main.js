@@ -759,25 +759,60 @@ function sym() {
 
 
 function checkCashRegister(price, cash, cid) {
-    var change;
-    // Here is your change, ma'am.
+    // All amounts are multiplied by 100 until the final result to avoid errors with floating point math
+    const denominations = { "PENNY": 1, "NICKEL": 5, "DIME": 10, "QUARTER": 25, "ONE": 100, "FIVE": 500, "TEN": 1000, "TWENTY": 2000, "ONE HUNDRED": 10000 }
+    let changeDue = (cash * 100 - price * 100);
+    const register = cid.reverse().map(el => [el[0], Math.round(el[1]*100)]);
+    const registerTotal = register.reduce((sum, elem) => (sum + elem[1]), 0);
+    
+    if (changeDue > registerTotal ) return "Insufficient Funds";
+    if (changeDue === registerTotal ) return "Closed";
+  
+    let partial;
+    let change = register.reduce((acc, elem) => {
+          // for each denomination calculate the lesser of (a) the amount that could be paid with that
+          // denomination without going over the amount owed, and (b) the actual amount of that denomination in 
+          // the register. Denominations not used to make change are excluded from the resulting array.
+          partial = Math.min(elem[1], Math.floor(changeDue / denominations[elem[0]]) * denominations[elem[0]]);
+          if ( partial > 0 ) {
+            changeDue -= partial;
+            acc.push([elem[0], partial / 100]);
+          } return acc;
+      }, [])
+        
+    // If the correct change could not be made from what was in the register.
+    if (changeDue > 0 ) return "Insufficient Funds"
+  
     return change;
   }
   
-  // Example cash-in-drawer array:
-  // [["PENNY", 1.01],
-  // ["NICKEL", 2.05],
-  // ["DIME", 3.10],
-  // ["QUARTER", 4.25],
-  // ["ONE", 90.00],
-  // ["FIVE", 55.00],
-  // ["TEN", 20.00],
-  // ["TWENTY", 60.00],
-  // ["ONE HUNDRED", 100.00]]
+//   checkCashRegister(19.50, 20.00, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.10], ["QUARTER", 4.25], ["ONE", 90.00], ["FIVE", 55.00], ["TEN", 20.00], ["TWENTY", 60.00], ["ONE HUNDRED", 100.00]]);
   
-  checkCashRegister(19.50, 20.00, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.10], ["QUARTER", 4.25], ["ONE", 90.00], ["FIVE", 55.00], ["TEN", 20.00], ["TWENTY", 60.00], ["ONE HUNDRED", 100.00]]);
-  
- 
+ //===========================================Inventory update
+ //Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in arr1). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.
+
+
+ function updateInventory(arr1, arr2) {
+    // All inventory must be accounted for or you're fired!
+    return arr1;
+}
+
+// Example inventory lists
+var curInv = [
+    [21, "Bowling Ball"],
+    [2, "Dirty Sock"],
+    [1, "Hair Pin"],
+    [5, "Microphone"]
+];
+
+var newInv = [
+    [2, "Hair Pin"],
+    [3, "Half-Eaten Apple"],
+    [67, "Bowling Ball"],
+    [7, "Toothpaste"]
+];
+
+updateInventory(curInv, newInv);
  
 
   
