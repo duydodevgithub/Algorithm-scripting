@@ -793,7 +793,47 @@ function checkCashRegister(price, cash, cid) {
 
 
  function updateInventory(arr1, arr2) {
-    // All inventory must be accounted for or you're fired!
+    var index;
+
+    // A helper method to return the index of a specified product (undefined if not found)
+    var getProductIndex = function (name) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i][1] === name) {
+                return i;
+            }
+        }
+        return undefined;
+    }
+
+    // For each item of the new Inventory
+    for (var i = 0; i < arr2.length; i++) {
+
+        // Invoke our helper function using arr1 as this
+        index = getProductIndex.call(arr1, arr2[i][1]);
+
+        // If the item doesn't exist
+        if (index === undefined) {
+            // Push the entire item
+            arr1.push(arr2[i]);
+        } else {
+            // Add the new quantity of the current item
+            arr1[index][0] += arr2[i][0];
+        }
+
+    }
+
+    // Sort alphabetically, by the product name of each item
+    arr1.sort(function (a, b) {
+        if (a[1] > b[1]) {
+            return 1;
+        }
+        if (a[1] < b[1]) {
+            return -1;
+        }
+        return 0;
+    });
+
+    return arr1;
     return arr1;
 }
 
@@ -812,7 +852,130 @@ var newInv = [
     [7, "Toothpaste"]
 ];
 
-updateInventory(curInv, newInv);
- 
+// updateInventory(curInv, newInv);
 
+//=================================No repeats please
+//Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.
+
+
+function permAlone(str) {
+
+    // Create a regex to match repeated consecutive characters.
+    var regex = /(.)\1+/g;
   
+    // Split the string into an array of characters.
+    var arr = str.split('');
+    var permutations = [];
+    var tmp;
+  
+    // Return 0 if str contains same character.
+    if (str.match(regex) !== null && str.match(regex)[0] === str) return 0;
+  
+    // Function to swap variables' content.
+    function swap(index1, index2) {
+      tmp = arr[index1];
+      arr[index1] = arr[index2];
+      arr[index2] = tmp;
+    }
+  
+    // Generate arrays of permutations using the algorithm.
+    function generate(int) {
+      if (int === 1) {
+        // Make sure to join the characters as we create  the permutation arrays
+        permutations.push(arr.join(''));
+      } else {
+        for (var i = 0; i != int; ++i) {
+          generate(int - 1);
+          swap(int % 2 ? 0 : i, int - 1);
+        }
+      }
+    }
+  
+    generate(arr.length);
+  
+    // Filter the array of repeated permutations.
+    var filtered = permutations.filter(function(string) {
+      return !string.match(regex);
+    });
+  
+    // Return how many have no repetitions.
+    return filtered.length;
+  }
+  
+//   permAlone('aab');
+//==============================================Make a Person
+
+var Person = function(firstAndLast) {
+    var fullName = firstAndLast;
+  
+    this.getFirstName = function() {
+      return fullName.split(" ")[0];
+    };
+  
+    this.getLastName = function() {
+      return fullName.split(" ")[1];
+    };
+  
+    this.getFullName = function() {
+      return fullName;
+    };
+  
+    this.setFirstName = function(name) {
+      fullName = name + " " + fullName.split(" ")[1];
+    };
+  
+    this.setLastName = function(name) {
+      fullName = fullName.split(" ")[0] + " " + name;
+    };
+  
+    this.setFullName = function(name) {
+      fullName = name;
+    };
+  };
+  
+  var bob = new Person('Bob Ross');
+// bob.getFullName();
+
+//=======================================Map the Debris
+function orbitalPeriod(arr) {
+    var GM = 398600.4418;
+    var earthRadius = 6367.4447;
+    var a = 2 * Math.PI;
+    var newArr = [];
+    var getOrbPeriod = function(obj) {
+      var c = Math.pow(earthRadius + obj.avgAlt, 3);
+      var b = Math.sqrt(c / GM);
+      var orbPeriod = Math.round(a * b);
+      delete obj.avgAlt;
+      obj.orbitalPeriod = orbPeriod;
+      return obj;
+    };
+  
+    for (var elem in arr) {
+      newArr.push(getOrbPeriod(arr[elem]));
+    }
+  
+    return newArr;
+  }
+  
+  // test here
+//   orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+ 
+//==========================================Pairwise
+//Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.
+
+function pairwise(arr, arg) {
+    let sum = 0;
+    for(var i = 0; i < arr.length - 1; i++) {
+        for(var j = i + 1; j < arr.length; j++) {
+            if(arr[i] + arr[j] === arg) {
+                sum += i + j;
+                console.log(i,j);
+            }
+        }
+    }
+    // console.log(sum);
+    // return sum;
+  }
+  
+  pairwise([1, 1, 1], 2)
