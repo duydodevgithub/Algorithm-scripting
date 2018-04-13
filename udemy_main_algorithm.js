@@ -1,18 +1,27 @@
-//fizz buzz question
-
-function fizzBuzz(n) {
-    for(var i = 1; i <= n; i++) {
-        if(i%3 === 0) {
-            if(i%5 === 0) {
-                console.log ("fizzbuzz");
-            }
-            console.log( "fizz");
-        } else if(i%5 === 0) {
-            console.log( "buzz");
-        } else {
-            console.log(i);
+function toMilitaryTime(time) {
+    let t,hour, minute;
+    let result;
+    t = time.split(" ");
+    hour = parseInt(t[0].split(":")[0]);
+    minute = t[0].split(":")[1];
+    // console.log(t[1]);
+    //AM
+    if(t[1] === "AM") {
+        if(hour < 10) {
+            hour = "0" + hour;
+        } else if(hour === 12){
+            hour = "00";
         }
+    } else if (t[1] === "PM") {
+        if(hour !== 12) {
+            hour = hour + 12;
+        }
+    } else if(t[1] === "NOON") {
+        hour = 12;
+    } else if(t[1] === "MIDNIGHT"){
+        hour = 24;
     }
+    console.log(result = hour.toString() + minute);
 }
 
-fizzBuzz(100);
+toMilitaryTime("12:11 AM");
