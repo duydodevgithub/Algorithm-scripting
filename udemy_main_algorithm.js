@@ -24,4 +24,29 @@ function toMilitaryTime(time) {
     console.log(result = hour.toString() + minute);
 }
 
-toMilitaryTime("12:11 AM");
+// toMilitaryTime("6:00 AM");
+
+
+//create character map
+
+function turnOb(str) {
+    let obj = {};
+    for(let char of str) {
+        obj[char] = obj[char] + 1 || 1
+    }
+    console.log(obj);
+}
+
+turnOb("hellothere", "e");
+
+//turn an array into object
+
+function turnToObj(arr) {
+    let obj = {};
+    for(let i = 0; i < arr.length; i++) {
+        obj[i] = arr[i];
+    }
+    console.log(obj);
+}
+
+// turnToObj(["a", "b", "c"]);
