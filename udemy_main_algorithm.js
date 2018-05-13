@@ -37,7 +37,7 @@ function turnOb(str) {
     console.log(obj);
 }
 
-turnOb("hellothere", "e");
+// turnOb("hellothere");
 
 //turn an array into object
 
@@ -50,3 +50,26 @@ function turnToObj(arr) {
 }
 
 // turnToObj(["a", "b", "c"]);
+
+array = [3, 5, 6, 8, 5, 3]
+
+// function firstDup(arr) {
+// 	//turn into an object
+// 	let obj = {};
+//   for(let char of arr) {
+//   	obj[char] = obj[char] + 1 || 1;
+//     if(obj[char] > 1) {
+//         console.log(obj);
+//     }
+//   }
+// }
+
+function firstDup(arr) {
+    for (i = 0; i < arr.length; i++) {
+        if (i != arr.indexOf(arr[i])) {
+            console.log(arr[i]);
+        }
+    }
+}
+
+console.log(firstDup([3, 5, 6, 8, 5, 3]));
